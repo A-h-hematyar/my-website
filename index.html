@@ -8,19 +8,66 @@
 
   <style>
     :root {
-  --main: #EAC7A7;   /* رنگ کرم اصلی */
-  --dark: #000000;   /* رنگ مشکی اصلی */
-  --hover:#b09276;
-  --text-light: #ffffff;
-  --bg-dark: #0f0f0f;
+      --main: #EAC7A7;
+      --dark: #000000;
+      --hover:#b09276;
+      --text-light: #ffffff;
+      --bg-dark: #0f0f0f;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap');
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Vazirmatn",sans-serif;}
-    body{background:#0f0f0f;color:#fff;scroll-behavior:smooth;}
-    header{position:fixed;top:0;left:0;width:100%;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);z-index:999;}
-    header a.logo{font-size:20px;font-weight:700;color:#fff;text-decoration:none;}
-    header nav a{margin-left:20px;font-size:14px;color:#ddd;text-decoration:none;transition:0.3s;}
-    header nav a:hover{color:#fff;}
+
+    /* ------------------------------------
+       LOCAL FONT – NO GOOGLE NEEDED
+    ------------------------------------ */
+    @font-face {
+      font-family: "Vazirmatn";
+      src: url("./fonts/Vazirmatn-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Vazirmatn";
+      src: url("./fonts/Vazirmatn-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Vazirmatn",sans-serif;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:#fff;
+      scroll-behavior:smooth;
+    }
+
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      padding:15px 40px;
+      display:flex;justify-content:space-between;align-items:center;
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(10px);
+      z-index:999;
+    }
+    header a.logo{
+      font-size:20px;
+      font-weight:700;
+      color:#fff;
+      text-decoration:none;
+    }
+    header nav a{
+      margin-left:20px;
+      font-size:14px;
+      color:#ddd;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    header nav a:hover{
+      color:#fff;
+    }
 
     section{
       padding:60px 40px;
@@ -29,15 +76,48 @@
     }
 
     /* HERO */
-    #home{background:#111;display:flex;justify-content:space-between;gap:40px;min-height:auto;}
-    #home .text{max-width:50%;animation:fadeUp 1.2s ease forwards;opacity:0;}
-    #home .text h1{font-size:48px;margin-bottom:15px;}
-    #home .text p{opacity:0.8;line-height:1.8;margin-bottom:25px;}
-    #home .text .btn{padding:12px 20px;background:var(--main);border-radius:8px;text-decoration:none;color:#fff;transition:0.3s;}
-    #home .text .btn:hover{background:#b09276;}
+    #home{
+      background:#111;
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      min-height:auto;
+    }
+    #home .text{
+      max-width:50%;
+      animation:fadeUp 1.2s ease forwards;
+      opacity:0;
+    }
+    #home .text h1{
+      font-size:48px;
+      margin-bottom:15px;
+    }
+    #home .text p{
+      opacity:0.8;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+    #home .text .btn{
+      padding:12px 20px;
+      background:var(--main);
+      border-radius:8px;
+      text-decoration:none;
+      color:#000000;
+      transition:0.3s;
+    }
+    #home .text .btn:hover{
+      background:#b09276;
+    }
 
-    #home .image{max-width:40%;animation:fadeIn 1.4s ease forwards;opacity:0;}
-    #home .image img{width:100%;border-radius:18px;}    
+    #home .image{
+      max-width:40%;
+      animation:fadeIn 1.4s ease forwards;
+      opacity:0;
+    }
+    #home .image img{
+      width:100%;
+      border-radius:18px;
+    }
 
     /* Social Buttons */
     .social-buttons{
@@ -70,41 +150,104 @@
     @media (max-width:600px){
       .icon-btn{width:42px;height:42px;}
       .icon-btn svg{width:22px;height:22px;}
-      #home{flex-direction:column;text-align:center;}
-      #home .image, #home .text{max-width:100%;}
-
-      /* Social icons center in mobile */
+      #home{
+        flex-direction:column;
+        text-align:center;
+      }
+      #home .image, #home .text{
+        max-width:100%;
+      }
       .social-buttons{
         justify-content:center;
         margin-right:0;
       }
-
       section{
         padding:40px 20px;
       }
     }
 
     /* ABOUT */
-    #about{background:#141414;display:flex;justify-content:space-between;gap:40px;min-height:auto;}
-    #about .box{flex:1;animation:fadeUp 1s ease forwards;opacity:0;}
-    #about h2{font-size:36px;margin-bottom:20px;}
-    #about p{line-height:1.9;color:#ccc;}
+    #about{
+      background:#141414;
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      min-height:auto;
+    }
+    #about .box{
+      flex:1;
+      animation:fadeUp 1s ease forwards;
+      opacity:0;
+    }
+    #about h2{
+      font-size:36px;
+      margin-bottom:20px;
+    }
+    #about p{
+      line-height:1.9;
+      color:#ccc;
+    }
 
     /* RESUME */
-    #resume{background:#121212;flex-direction:column;text-align:center;min-height:auto;}
-    #resume h2{font-size:36px;margin-bottom:25px;}
-    #resume .timeline{max-width:600px;margin:auto;border-right:2px solid #EAC7A7;padding-right:20px;}
-    #resume .item{margin-bottom:30px;position:relative;padding-right:20px;}
-    #resume .item::before{content:"";position:absolute;right:-10px;top:5px;width:12px;height:12px;background:var(--main);border-radius:50%;}
-    #resume .item h3{font-size:20px;margin-bottom:5px;}
-    #resume .item span{font-size:14px;color:#aaa;}
+    #resume{
+      background:#121212;
+      flex-direction:column;
+      text-align:center;
+      min-height:auto;
+    }
+    #resume h2{
+      font-size:36px;
+      margin-bottom:25px;
+    }
+    #resume .timeline{
+      max-width:600px;
+      margin:auto;
+      border-right:2px solid #EAC7A7;
+      padding-right:20px;
+    }
+    #resume .item{
+      margin-bottom:30px;
+      position:relative;
+      padding-right:20px;
+    }
+    #resume .item::before{
+      content:"";
+      position:absolute;
+      right:-10px;
+      top:5px;
+      width:12px;
+      height:12px;
+      background:var(--main);
+      border-radius:50%;
+    }
+    #resume .item h3{
+      font-size:20px;
+      margin-bottom:5px;
+    }
+    #resume .item span{
+      font-size:14px;
+      color:#aaa;
+    }
 
-    @keyframes fadeUp{0%{transform:translateY(40px);opacity:0;}100%{transform:none;opacity:1;}}
-    @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+    @keyframes fadeUp{
+      0%{transform:translateY(40px);opacity:0;}
+      100%{transform:none;opacity:1;}
+    }
+    @keyframes fadeIn{
+      0%{opacity:0;}
+      100%{opacity:1;}
+    }
 
     /* PORTFOLIO */
-    #portfolio{background:#101010;flex-direction:column;}
-    #portfolio h2{font-size:36px;margin-bottom:25px;text-align:center;}
+    #portfolio{
+      background:#101010;
+      flex-direction:column;
+    }
+    #portfolio h2{
+      font-size:36px;
+      margin-bottom:25px;
+      text-align:center;
+    }
 
     #portfolio .grid{
       display:grid;
@@ -149,7 +292,10 @@
       border-radius:12px;
       max-width:80%;
     }
-    .modal-content img{width:100%;border-radius:12px;}
+    .modal-content img{
+      width:100%;
+      border-radius:12px;
+    }
 
     .modal-buttons{
       margin-top:15px;
@@ -159,7 +305,7 @@
     .close-btn, .download-btn{
       padding:8px 16px;
       border-radius:8px;
-      color:#fff;
+      color:#000000;
       background:var(--main);
       border:none;
       cursor:pointer;
@@ -190,7 +336,7 @@
   <div class="text">
     <h1>امیرحسین همت‌یار</h1>
     <p>طراح گرافیک و خالق هویت بصری — عاشق طراحی تمیز، مدرن، دقیق و چشم‌گیر.</p>
-    <a href="#about" class="btn" style="color: #000000;">بیشتر بدانید</a>
+    <a href="#about" class="btn">بیشتر بدانید</a>
 
     <div class="social-buttons">
 
@@ -202,7 +348,7 @@
         </svg>
       </a>
 
-      <a href="https://t.me/A_h_hematyar" class="icon-btn" target="_blank">
+      <a href="https://t.me" class="icon-btn" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 2 11 13"></path>
           <path d="m22 2-7 20-4-9-9-4Z"></path>
@@ -222,12 +368,12 @@
   <div class="box">
     <h2>درباره من</h2>
     <p>
-      من امیرحسین همت‌یار، طراح گرافیک هستم. تخصص من طراحی لوگو、 پوستر、 کاور، کارت ویزیت و هویت بصری برندهاست. سعی می‌کنم در هر پروژه ترکیبی از خلاقیت، نظم و سادگی ارائه بدم تا خروجی نهایی هم زیبا باشه و هم کاربردی.
+      من امیرحسین همت‌یار، طراح گرافیک هستم. تخصص من طراحی لوگو، پوستر، کاور، کارت ویزیت و هویت بصری برندهاست.
     </p>
   </div>
   <div class="box">
     <p>
-      علاوه بر طراحی، به موشن گرافیک و ادیت پیشرفته هم علاقه‌مندم و همیشه در حال یادگیری ابزارهای جدید برای بهبود خروجی‌هام هستم. هدفم ساختن پروژه‌هایی هست که هم تأثیرگذار باشن و هم ماندگار.
+      علاوه بر طراحی، به موشن گرافیک و ادیت پیشرفته هم علاقه‌مندم. هدفم ساختن کارهایی هست که هم زیبا باشن و هم ماندگار.
     </p>
   </div>
 </section>
@@ -267,8 +413,8 @@
   <div class="modal-content">
     <img id="modal-img" src="" />
     <div class="modal-buttons">
-      <button class="close-btn" onclick="closeModal()" style="color: #000000;">بستن</button>
-      <a id="download-btn" class="download-btn" style="color: #000000;" download>دانلود</a>
+      <button class="close-btn" onclick="closeModal()">بستن</button>
+      <a id="download-btn" class="download-btn" download>دانلود</a>
     </div>
   </div>
 </div>
@@ -296,7 +442,7 @@ function revealOnScroll(){
       el.style.transform = "none";
     }
   });
-} 
+}
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 </script>
