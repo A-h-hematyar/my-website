@@ -18,25 +18,29 @@
     /* ------------------------------------
        LOCAL FONT – NO GOOGLE NEEDED
     ------------------------------------ */
-    @font-face {
-      font-family: "Vazirmatn";
-      src: url("./fonts/Vazirmatn-Regular.woff2") format("woff2");
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: "Vazirmatn";
-      src: url("./fonts/Vazirmatn-Bold.woff2") format("woff2");
-      font-weight: 700;
-      font-style: normal;
-    }
+    /* فونت‌های محلی */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./FONT/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:"Vazirmatn",sans-serif;
-    }
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./FONT/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* اعمال فونت به کل صفحه */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
 
     body{
       background:#0f0f0f;
@@ -334,6 +338,9 @@
 
 <section id="home">
   <div class="text">
+    <br>
+    <br>
+    <br>
     <h1>امیرحسین همت‌یار</h1>
     <p>طراح گرافیک و خالق هویت بصری — عاشق طراحی تمیز، مدرن، دقیق و چشم‌گیر.</p>
     <a href="#about" class="btn">بیشتر بدانید</a>
