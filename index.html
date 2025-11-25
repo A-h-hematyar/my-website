@@ -5,40 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>امیرحسین همت‌یار – طراح گرافیک</title>
     <link rel="shortcut icon" href="./img/Logotype 2.png" type="image/x-icon">
-    <!-- فونت Vazirmatn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
     <style>
-        /* Reset و متغیرها */
-        :root {
-            --main: #EAC7A7;
-            --dark: #000000;
-            --hover: #b09276;
-            --text-light: #ffffff;
-            --bg-dark: #0f0f0f;
-            --bg-light: #f5f5f5;
-            --text-dark: #222222;
-            --card-bg: #181818;
-            --card-bg-light: #ffffff;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Vazirmatn', sans-serif;
         }
 
         body {
-            background: var(--bg-dark);
-            color: var(--text-light);
+            background: #0f0f0f;
+            color: #fff;
             line-height: 1.6;
-            overflow-x: hidden;
-            font-family: 'Vazirmatn', sans-serif;
         }
 
         /* هدر */
@@ -46,67 +25,34 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 1rem;
             background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: bold;
             color: #fff;
             text-decoration: none;
-            font-family: 'Vazirmatn', sans-serif;
         }
 
-        /* نویگیشن دسکتاپ */
-        .nav-desktop {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-desktop a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-            position: relative;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .nav-desktop a:hover {
-            color: var(--main);
-        }
-
-        .nav-desktop a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background: var(--main);
-            transition: width 0.3s ease;
-        }
-
-        .nav-desktop a:hover::after {
-            width: 100%;
-        }
-
-        /* همبرگر منو */
+        /* منوی موبایل */
         .hamburger {
-            display: none;
+            display: flex;
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
             padding: 5px;
-            z-index: 1001;
         }
 
         .hamburger span {
@@ -116,35 +62,20 @@
             transition: 0.3s;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* منوی موبایل */
         .nav-mobile {
             position: fixed;
             top: 0;
             right: -100%;
             width: 100%;
             height: 100vh;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(20px);
+            background: #0a0a0a;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem;
-            transition: right 0.4s ease;
+            gap: 2rem;
+            transition: right 0.3s ease;
             z-index: 999;
-            padding: 2rem;
         }
 
         .nav-mobile.active {
@@ -155,113 +86,72 @@
             color: #fff;
             text-decoration: none;
             font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            font-family: 'Vazirmatn', sans-serif;
-            width: 100%;
-            text-align: center;
-        }
-
-        .nav-mobile a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(234, 199, 167, 0.1);
-            transition: right 0.3s ease;
-            z-index: -1;
+            padding: 1rem 2rem;
         }
 
         .nav-mobile a:hover {
-            color: var(--main);
-        }
-
-        .nav-mobile a:hover::before {
-            right: 0;
+            color: #EAC7A7;
         }
 
         /* بخش‌ها */
         section {
             min-height: 100vh;
-            padding: 5rem 1.5rem;
+            padding: 5rem 1rem;
             display: flex;
             align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
         }
 
         /* هیرو */
         #home {
             background: #111;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 3rem;
-            padding-top: 6rem;
+            text-align: center;
         }
 
-        .hero-text {
-            flex: 1;
-            max-width: 50%;
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
         }
 
         .hero-text h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--main);
-            font-family: 'Vazirmatn', sans-serif;
-            line-height: 1.3;
+            color: #EAC7A7;
         }
 
         .hero-text p {
             font-size: 1rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            font-family: 'Vazirmatn', sans-serif;
-            line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: var(--main);
+            background: #EAC7A7;
             color: #000;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            transition: all 0.3s;
-            font-family: 'Vazirmatn', sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            background: var(--hover);
-            transform: translateY(-2px);
-        }
-
-        .hero-image {
-            flex: 1;
-            max-width: 40%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin-bottom: 2rem;
         }
 
         .hero-image img {
-            width: 100%;
-            max-width: 300px;
+            width: 200px;
             border-radius: 12px;
         }
 
-        /* دکمه‌های اجتماعی */
         .social-buttons {
-            margin-top: 2rem;
             display: flex;
             gap: 1rem;
-            justify-content: flex-start;
+            justify-content: center;
         }
 
         .icon-btn {
@@ -272,13 +162,7 @@
             justify-content: center;
             background: #1a1a1a;
             border-radius: 50%;
-            transition: all 0.3s;
             text-decoration: none;
-        }
-
-        .icon-btn:hover {
-            background: var(--main);
-            transform: translateY(-3px);
         }
 
         .icon-btn svg {
@@ -287,57 +171,46 @@
             stroke: #fff;
         }
 
-        .icon-btn:hover svg {
-            stroke: #000;
-        }
-
         /* درباره من */
         #about {
             background: #141414;
-            display: flex;
-            gap: 3rem;
-            padding: 5rem 1.5rem;
         }
 
-        .about-box {
-            flex: 1;
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .about-box h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--main);
-            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #EAC7A7;
         }
 
         .about-box p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
             line-height: 1.8;
-            font-family: 'Vazirmatn', sans-serif;
         }
 
         /* رزومه */
         #resume {
             background: #121212;
-            flex-direction: column;
             text-align: center;
-            padding: 5rem 1.5rem;
         }
 
         #resume h2 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--main);
-            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #EAC7A7;
         }
 
         .timeline {
             max-width: 500px;
             margin: 0 auto;
-            border-right: 2px solid var(--main);
-            padding-right: 1.5rem;
-            position: relative;
+            border-right: 2px solid #EAC7A7;
+            padding-right: 1rem;
         }
 
         .timeline-item {
@@ -354,14 +227,13 @@
             top: 8px;
             width: 12px;
             height: 12px;
-            background: var(--main);
+            background: #EAC7A7;
             border-radius: 50%;
         }
 
         .timeline-item h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
-            font-family: 'Vazirmatn', sans-serif;
         }
 
         .timeline-item span {
@@ -370,33 +242,454 @@
             background: rgba(234, 199, 167, 0.1);
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
-            font-family: 'Vazirmatn', sans-serif;
         }
 
         /* نمونه کارها */
         #portfolio {
             background: #101010;
-            flex-direction: column;
-            padding: 5rem 1.5rem;
+            text-align: center;
         }
 
         #portfolio h2 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--main);
-            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #EAC7A7;
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
-            width: 100%;
         }
 
         .portfolio-item {
-            background: var(--card-bg);
+            background: #181818;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-item p {
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        /* مدال */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .modal-image img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .modal-btn {
+            padding: 0.7rem;
+            border: none;
+            border-radius: 6px;
+            background: #EAC7A7;
+            color: #000;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .modal-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* فوتر */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #EAC7A7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-bottom {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* دسکتاپ */
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+                gap: 2rem;
+            }
+            
+            .nav-desktop a {
+                color: #ddd;
+                text-decoration: none;
+            }
+            
+            .hamburger {
+                display: none;
+            }
+            
+            .nav-mobile {
+                display: none;
+            }
+            
+            #home {
+                text-align: right;
+            }
+            
+            .hero-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: right;
+            }
+            
+            .hero-text {
+                flex: 1;
+            }
+            
+            .hero-image {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: row;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-links {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .modal-buttons {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header>
+        <div class="header-content">
+            <a href="#home" class="logo">AMIRHOSSEIN HEMATYAR</a>
+            
+            <nav class="nav-desktop">
+                <a href="#home">خانه</a>
+                <a href="#about">درباره من</a>
+                <a href="#resume">رزومه</a>
+                <a href="#portfolio">نمونه کارها</a>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل -->
+    <nav class="nav-mobile" id="navMobile">
+        <a href="#home">خانه</a>
+        <a href="#about">درباره من</a>
+        <a href="#resume">رزومه</a>
+        <a href="#portfolio">نمونه کارها</a>
+    </nav>
+
+    <!-- بخش اصلی -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>امیرحسین همت‌یار</h1>
+                    <p>طراح گرافیک و خالق هویت بصری — عاشق طراحی تمیز، مدرن، دقیق و چشم‌گیر.</p>
+                    <a href="#about" class="btn">بیشتر بدانید</a>
+                    
+                    <div class="social-buttons">
+                        <a href="https://instagram.com" class="icon-btn" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://t.me" class="icon-btn" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M22 2 11 13"></path>
+                                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="./img/Logotype 2.png" alt="امیرحسین همت‌یار">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- درباره من -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-box">
+                    <h2>درباره من</h2>
+                    <p>
+                        من امیرحسین همت‌یار، طراح گرافیک هستم. تخصص من طراحی لوگو، پوستر، کاور، کارت ویزیت و هویت بصری برندهاست.
+                    </p>
+                </div>
+                <div class="about-box">
+                    <p>
+                        علاوه بر طراحی، به موشن گرافیک و ادیت پیشرفته هم علاقه‌مندم. هدفم ساختن کارهایی هست که هم زیبا باشن و هم ماندگار.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- رزومه -->
+    <section id="resume">
+        <div class="container">
+            <h2>رزومه</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>طراح گرافیک — فریلنس</h3>
+                    <span>1400 تا اکنون</span>
+                </div>
+                <div class="timeline-item">
+                    <h3>طراح هویت بصری</h3>
+                    <span>1402</span>
+                </div>
+                <div class="timeline-item">
+                    <h3>دوره‌های حرفه‌ای Photoshop / Illustrator</h3>
+                    <span>1401</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نمونه کارها -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>نمونه کارها</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" onclick="openModal('پوستر فردوسی - طراحی مدرن', 'طراحی این پوستر با الهام از داستان‌های شاهنامه فردوسی انجام شده است.', './img/فردوسی2.jpg')">
+                    <div class="portfolio-image">
+                        <img src="./img/فردوسی2.jpg" alt="پوستر ۱">
+                    </div>
+                    <p>پوستر ۱</p>
+                </div>
+                
+                <div class="portfolio-item" onclick="openModal('پوستر فردوسی - طراحی مینیمال', 'این پوستر با رویکرد مینیمال طراحی شده است.', './img/فردوسی.jpg')">
+                    <div class="portfolio-image">
+                        <img src="./img/فردوسی.jpg" alt="پوستر ۲">
+                    </div>
+                    <p>پوستر ۲</p>
+                </div>
+                
+                <div class="portfolio-item" onclick="openModal('پوستر ساعت وارونه', 'این طراحی مفهومی با استفاده از نماد ساعت وارونه طراحی شده است.', './img/ساعت-وارونه2.jpg')">
+                    <div class="portfolio-image">
+                        <img src="./img/ساعت-وارونه2.jpg" alt="پوستر ۳">
+                    </div>
+                    <p>پوستر ۳</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">AMIRHOSSEIN HEMATYAR</div>
+            
+            <div class="footer-links">
+                <a href="#home">خانه</a>
+                <a href="#about">درباره من</a>
+                <a href="#resume">رزومه</a>
+                <a href="#portfolio">نمونه کارها</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://instagram.com" class="icon-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                
+                <a href="https://t.me" class="icon-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M22 2 11 13"></path>
+                        <path d="m22 2-7 20-4-9-9-4Z"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                © 2023 تمامی حقوق محفوظ است | طراحی شده با ❤️ توسط امیرحسین همت‌یار
+            </div>
+        </div>
+    </footer>
+
+    <!-- مدال -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-image">
+                <img id="modal-img" src="" alt="">
+            </div>
+            <div class="modal-description" id="modal-description"></div>
+            <div class="modal-buttons">
+                <button class="modal-btn" onclick="closeModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    بستن
+                </button>
+                <a id="download-btn" class="modal-btn" download>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    دانلود
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // منوی همبرگر
+        const hamburger = document.getElementById('hamburger');
+        const navMobile = document.getElementById('navMobile');
+        
+        hamburger.addEventListener('click', function() {
+            navMobile.classList.toggle('active');
+        });
+        
+        // بستن منو هنگام کلیک روی لینک‌ها
+        document.querySelectorAll('.nav-mobile a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMobile.classList.remove('active');
+            });
+        });
+        
+        // مدال
+        function openModal(title, description, imageSrc) {
+            document.getElementById('modal-img').src = imageSrc;
+            document.getElementById('modal-description').textContent = description;
+            document.getElementById('download-btn').href = imageSrc;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // بستن مدال با کلیک خارج
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // اسکرول نرم
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+      rd-bg);
             border-radius: 10px;
             overflow: hidden;
             transition: all 0.3s;
