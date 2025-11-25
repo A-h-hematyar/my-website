@@ -62,15 +62,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--header-bg);
-            backdrop-filter: blur(10px);
+            background:#00000000;
+            backdrop-filter: blur(25px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.219);
             transition: all 0.3s ease;
         }
 
         body.light-mode header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.233);
+            backdrop-filter: blur(25px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
@@ -177,8 +178,8 @@
             right: -100%;
             width: 100%;
             height: 100vh;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.507);
+            backdrop-filter: blur(30px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -189,7 +190,8 @@
         }
 
         body.light-mode .nav-mobile {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(25px);
         }
 
         .nav-mobile.active {
@@ -331,6 +333,7 @@
             align-items: center;
             justify-content: center;
             background: #1a1a1a;
+            backdrop-filter: blur(25px);
             border-radius: 50%;
             transition: background 0.3s, transform 0.2s;
             text-decoration: none;
@@ -414,7 +417,8 @@
         }
 
         .skill-category {
-            background: var(--card-bg);
+            background:#00000038;
+            backdrop-filter: blur(25px);
             border-radius: 12px;
             padding: 2rem;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -982,13 +986,7 @@
     <section id="about">
         <div class="about-box">
             <h2>درباره من</h2>
-            <p>
-                من امیرحسین همت‌یار، طراح گرافیک هستم. تخصص من طراحی لوگو، پوستر، کاور، کارت ویزیت و هویت بصری برندهاست.
-            </p>
-        </div>
-        <div class="about-box">
-            <p>
-                علاوه بر طراحی، به موشن گرافیک و ادیت پیشرفته هم علاقه‌مندم. هدفم ساختن کارهایی هست که هم زیبا باشن و هم ماندگار.
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
             </p>
         </div>
     </section>
